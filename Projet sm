@@ -1,0 +1,42 @@
+
+
+main (void)
+{
+// déclaration des variables 
+
+int nbr,base,numero ;
+int reste, quotient, diviseur;
+char affichage [20],convert[2],temp [20];
+
+//entrer de l'utilisateur 
+
+printf ("nombre a convertir:");
+scanf("%d",&nbr);
+numero= nbr;
+printf("base de conversion:");
+scanf("%d",&base );
+diviseur=base ;
+
+// algorithme 
+
+quotient=1;
+convert [1] = '\0';
+affichage [0]='\0';
+
+while ( quotient !=0)
+{
+quotient =nbr/diviseur ;
+reste= nbr % diviseur ;
+nbr=quotient ;
+
+if((reste >=0)&&(reste <=9))
+convert [0] = reste + 48 ;
+else 
+convert [0]=reste+ 55 ;
+strcpy( temp,convert);//on copie la chaîne convert dans la chaîne temp
+stract(temp, affichage);//on ajoute la chaîne affichage dans temp 
+strcpy( affichage, temp);// on copie la chaîne temp dans la chaîne affichage 
+}
+printf ("%d en base %d = %s\n", numero, base, affichage);
+return 0;
+}
